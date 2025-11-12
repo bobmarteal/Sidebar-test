@@ -1,0 +1,306 @@
+---
+import { SITE_TITLE } from '../consts';
+---
+
+<div>
+	<button class="menu-toggle" aria-label="Toggle menu">☰</button>
+<nav class="sidebar" aria-label="Main navigation">
+	<ul>
+
+		<!-- Admissions -->
+		<li>
+			<div class="nav-item">
+				<a href="/admissions">Admissions</a>
+				<button class="toggle" aria-label="Expand Admissions" aria-expanded="false"></button>
+			</div>
+			<ul>
+				<li><a href="/admissions/requirements-and-procedures">Requirements and procedures</a></li>
+				<li><a href="/admissions/visiting-a-s">Visiting A&amp;S</a></li>
+				<li><a href="/admissions/a-s-ambassadors">A&amp;S Ambassadors</a></li>
+			</ul>
+		</li>
+
+		<!-- Academics -->
+		<li>
+			<div class="nav-item">
+				<a href="/academics">Academics</a>
+				<button class="toggle" aria-label="Expand Academics" aria-expanded="false"></button>
+			</div>
+			<ul>
+				<li><a href="/academics/majors-and-minors">Majors and minors</a></li>
+				<li><a href="/academics/degree-requirements">Degree requirements</a></li>
+				<li><a href="/academics/innovative-curriculum">Innovative curriculum</a></li>
+				<li><a href="/academics/beyond-the-classroom">Beyond the classroom</a></li>
+				<li><a href="/academics/study-abroad">Study abroad</a></li>
+			</ul>
+		</li>
+
+		<!-- Student Services -->
+		<li>
+			<div class="nav-item">
+				<a href="/student-services">Student Services</a>
+				<button class="toggle" aria-label="Expand Student Services" aria-expanded="false"></button>
+			</div>
+			<ul>
+				<li>
+					<div class="nav-item">
+						<a href="/student-services/academic-advising">Academic advising</a>
+						<button class="toggle" aria-label="Expand Academic advising" aria-expanded="false"></button>
+					</div>
+					<ul>
+						<li><a href="/student-services/academic-advising/new-student-orientation">New student orientation</a></li>
+						<li><a href="/student-services/academic-advising/ap-ib-a-level-credits">AP, IB or A-level credits</a></li>
+						<li><a href="/student-services/academic-advising/choosing-and-applying-for-majors">Choosing and applying for majors</a></li>
+						<li><a href="/student-services/academic-advising/placement-exams">Placement exams</a></li>
+						<li><a href="/student-services/academic-advising/find-your-advisor">Find your advisor</a></li>
+					</ul>
+				</li>
+				<li>
+					<div class="nav-item">
+						<a href="/student-services/registrar">Registrar</a>
+						<button class="toggle" aria-label="Expand Registrar" aria-expanded="false"></button>
+					</div>
+					<ul>
+						<li><a href="/student-services/registrar/course-enrollment">Course enrollment</a></li>
+						<li>
+							<div class="nav-item">
+								<a href="/student-services/registrar/academic-policies">Academic policies</a>
+								<button class="toggle" aria-label="Expand Academic policies" aria-expanded="false"></button>
+							</div>
+							<ul>
+								<li><a href="/student-services/registrar/academic-policies/policy-petitions">Policy Petitions</a></li>
+							</ul>
+						</li>
+						<li><a href="/student-services/registrar/transferring-credits">Transferring credits</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<!-- Research and Scholarship -->
+		<li>
+			<div class="nav-item">
+				<a href="/research-and-scholarship">Research and Scholarship</a>
+				<button class="toggle" aria-label="Expand Research and Scholarship" aria-expanded="false"></button>
+			</div>
+			<ul>
+				<li>
+					<div class="nav-item">
+						<a href="/research-and-scholarship/undergraduate-research">Undergraduate research</a>
+						<button class="toggle" aria-label="Expand Undergraduate research" aria-expanded="false"></button>
+					</div>
+					<ul>
+						<li><a href="/research-and-scholarship/undergraduate-research/nexus-scholars-program">Nexus Scholars Program</a></li>
+						<li><a href="/research-and-scholarship/undergraduate-research/humanities-scholars-program">Humanities Scholars Program</a></li>
+						<li><a href="/research-and-scholarship/undergraduate-research/tanner-deans-scholars">Tanner Dean's Scholars</a></li>
+						<li><a href="/research-and-scholarship/undergraduate-research/milstein-program">Milstein Program</a></li>
+					</ul>
+				</li>
+				<li><a href="/research-and-scholarship/klarman-fellows">Klarman fellows</a></li>
+			</ul>
+		</li>
+
+	</ul>
+</nav>
+
+</div>
+
+<style>
+	 :root {
+   --sidebar-bg: #f9f9fb;
+   --accent: #0066cc;
+   --text: #333;
+}
+/*
+body {
+   margin: 0;
+   font-family: system-ui, sans-serif;
+   color: var(--text);
+   display: flex;
+   min-height: 100vh;
+} */
+body{
+    gap: 2rem;
+}
+/* --- SIDEBAR --- */
+nav.sidebar {
+   /* width: 300px; */
+   background: var(--sidebar-bg);
+   border-right: 1px solid #ddd;
+   padding: 1rem;
+   overflow-y: auto;
+   position: sticky;
+   top: 0;
+   height: 100vh;
+   font-size: 1.1em;
+}
+
+.sidebar h2 {
+   font-size: 1.1rem;
+   margin: 0 0 1rem;
+   font-weight: 600;
+}
+
+.sidebar ul {
+   list-style: none;
+   padding-left: 0;
+   margin: 0;
+}
+
+.sidebar li {
+   margin: 0.25rem 0;
+}
+
+.sidebar a {
+   color: var(--text);
+   text-decoration: none;
+   display: block;
+   /* padding: 0.35rem 0.5rem; */
+   /* border-radius: 6px; */
+}
+
+.sidebar a:hover,
+.sidebar a:focus {
+   background: #e6f0ff;
+}
+
+.sidebar a.active {
+	    font-weight: bold;
+    border-bottom: 4px solid var(--accent);
+	/* font-weight: bold; */
+}/* --- LIST ITEM WITH TOGGLE --- */
+.nav-item {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.open > .nav-item {
+   font-weight: bold;
+}
+.nav-item .toggle {
+   background: none;
+   border: none;
+   color: var(--text);
+   cursor: pointer;
+   padding: 0.35rem 0.5rem;
+   border-radius: 6px;
+   flex-shrink: 0;
+}
+
+.nav-item .toggle:hover {
+   background: #e6f0ff;
+}
+
+.nav-item .toggle::after {
+   content: "▸";
+   display: inline-block;
+   transition: transform 0.2s ease;
+}
+
+li.open > .nav-item .toggle::after {
+   transform: rotate(90deg);
+}
+
+/* --- SUBMENUS --- */
+.sidebar ul ul {
+	margin-left: 1rem;
+	border-left: 2px solid #eee;
+	padding-left: 0.75rem;
+	display: none;
+	font-size: 0.9em;
+}
+
+.sidebar li.open > ul {
+	display: block;
+}/* --- MAIN CONTENT --- */
+main {
+   flex: 1;
+   padding: 2rem;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+	body{
+		grid-template-columns: auto;
+	}
+   nav.sidebar {
+      position: fixed;
+      left: -270px;
+      transition: left 0.3s ease;
+      z-index: 100;
+	  padding-top: 5rem;
+   }
+   nav.sidebar.open {
+      left: 0;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+   }
+   .menu-toggle {
+      display: block;
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+	  width: 4rem;
+	  height: 4rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      z-index: 101;
+	  font-size: 2rem;
+
+   }
+}
+
+@media (min-width: 769px) {
+   .menu-toggle {
+      display: none;
+   }
+}
+
+</style>
+
+<script>
+	// Highlight current page link and expand parent menus
+	const currentPath = window.location.pathname;
+	document.querySelectorAll(".sidebar a").forEach((link) => {
+		const href = link.getAttribute("href");
+		if (href === currentPath) {
+			link.classList.add("active");
+			
+			// Expand all parent menus
+			let element = link.parentElement;
+			while (element) {
+				if (element.tagName === "LI") {
+					element.classList.add("open");
+				}
+				element = element.parentElement;
+			}
+		}
+	});
+
+	// Handle submenu toggles
+document.querySelectorAll(".toggle").forEach((btn) => {
+   btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const li = e.target.closest("li");
+      li.classList.toggle("open");
+      const expanded = li.classList.contains("open");
+      btn.setAttribute("aria-expanded", expanded);
+      btn.setAttribute(
+         "aria-label",
+         (expanded ? "Collapse " : "Expand ") +
+            li.querySelector("a").textContent
+      );
+   });
+});
+
+// Mobile menu toggle
+const menuToggle = document.querySelector(".menu-toggle");
+const sidebar = document.querySelector(".sidebar");
+menuToggle.addEventListener("click", () => {
+   sidebar.classList.toggle("open");
+});
+
+</script>
