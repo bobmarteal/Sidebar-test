@@ -264,6 +264,7 @@ main {
 <script>
 	// Highlight current page link and expand parent menus
 	const currentPath = window.location.pathname;
+	console.log("Current Path:", currentPath);
 	document.querySelectorAll(".sidebar a").forEach((link) => {
 		const href = link.getAttribute("href");
 		if (href === currentPath) {
