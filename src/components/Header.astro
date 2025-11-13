@@ -1,25 +1,32 @@
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+import { Image } from 'astro:assets';
+import Logo from '../assets/as-lockup.png';
 ---
 
 <header>
-	<nav>
-		<h1><a href="/">{SITE_TITLE}</a></h2>
+		<a href="/">
+			<Image src={Logo} alt={SITE_TITLE} width={300} />
+		</a>
+	
+	<!-- <nav> -->
+		<!-- <h1><a href="/">{SITE_TITLE}</a></h2> -->
 		<!-- <div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 		</div> -->
 
-	</nav>
+	<!-- </nav> -->
 </header>
 <style>
 	header {
 		margin: 0;
-		padding: 0 1em;
+		padding: 2rem;
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+
 	}
 	h2 {
 		margin: 0;

@@ -169,3 +169,7 @@ footer {
 p{
 	max-width: 70ch;
 }
+
+@view-transition {
+	navigation: auto;
+}
